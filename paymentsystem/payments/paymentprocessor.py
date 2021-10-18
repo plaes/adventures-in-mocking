@@ -1,11 +1,3 @@
-class User:
-    pass
-
-
-class PaymentDetails:
-    pass
-
-
 class PaymentService:
     def __init__(self, fraudservice, paymentgateway):
         # Injected services

@@ -10,14 +10,14 @@ Start with a class with following signature:
 
 ```
   1. [PaymentService] -> (User, PaymentDetails) -> [Fraud Service]
-  2. [Fraud Service] -> (boolean / Exception) -> [PaymentService]
+  2. [Fraud Service] -> (boolean) -> [PaymentService]
   3. [Payment Gateway] -> (PaymentDetails) -> [PaymentGateway]
 ```
 
 ## Acceptance criteria
 
-* If payment is fraudulent, an exception should be thrown
-* Payment should only be sent to payment gateway wheb payment is legit
+* If payment is fraudulent, an exception should be thrown in `PaymentService`
+* Payment should only be sent to payment gateway when payment is legitimate
 
 ## Testing approach
 
@@ -26,3 +26,8 @@ Start with a class with following signature:
 * Do not implement any of the methods in the `FraudService` / `PaymentGateway`.
 The methods there should throw the `NotImplementedException` to make sure
 mocks are properly used.
+
+
+## Running the tests
+
+`python -m unittest`
